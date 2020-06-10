@@ -1,7 +1,7 @@
 # Three simple project in python
 
-## Car class with proper requirements
+Car class with proper requirements
 
-## Task manager with text user interface
+Task manager with text user interface
 
-## Sudo password resolver
+Sudo password resolver
