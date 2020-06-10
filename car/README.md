@@ -7,7 +7,7 @@ Car class - outputs check correct requirements
 In terminal go to task_manager folder and use 
 
 ```
-\venv\Scripts\activate"
+\venv\Scripts\activate.bat
 ```
 
 ## Run
