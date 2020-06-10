@@ -1,3 +1,7 @@
-# Two simple project in python
+# Three simple project in python
 
-## Answer to chapter 3: 
+## Car class with proper requirements
+
+## Task manager with text user interface
+
+## Sudo password resolver
