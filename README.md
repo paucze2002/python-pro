@@ -1,7 +1,24 @@
-# Three simple project in python
+# Tasks manager
 
-Car class with proper requirements
+Tool to manage tasks
 
-Task manager with text user interface
+## Initialize
 
-Sudo password resolver
+```
+pip install -r requirements.txt
+```
+
+## Run
+
+In terminal write
+
+```
+python program.py
+```
+
+## Authors
+
+* **Paulina Czempiel**
+
+Enjoy
+    
