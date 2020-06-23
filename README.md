@@ -1,6 +1,6 @@
 # Tasks manager
 
-Tool to manage tasks
+Tool to manage tasks.
 
 ## Initialize
 
