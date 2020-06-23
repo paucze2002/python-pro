@@ -1,6 +1,7 @@
 # by Paulina Czempiel
 
 
+# task storage class
 class Tasks:
     def __init__(self, name, date, description):
         self.name = name

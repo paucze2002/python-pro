@@ -1,36 +1,20 @@
 # by Paulina Czempiel
 
+# modules
 import sqlite
 import datetime
-import argparse
 from tasks import Tasks
 
 
-# def run(args):
-#     action = args.input
-#     name = args.name
-#     deadline = args.deadline
-#     description = args.description
-#     print(action)
-
-
+# main func to say hello and start looping
 def main():
     print("Hello")
-    # parser = argparse.ArgumentParser(description="List, add, edit, delete tasks")
-    # parser.add_argument("", help="choose action", dest="input", type=str, required=True)
-    # parser.add_argument("--name", help="name of the task", dest="name", type=str, required=True)
-    # parser.add_argument("--deadline", help="deadline of the task", dest="deadline", type=str, required=False)
-    # parser.add_argument("--description", help="description of the task", dest="description", type=str, required=False)
-    #
-    # parser.set_defaults(func=run)
-    # args = parser.parse_args()
-    # args.func(args)
     input_loop()
 
 
+# program main loop
 def input_loop():
     while True:
-
         print("What do you want to do?")
         val = input("[l]ist tasks, [a]dd task, [e]dit task, [d]elete task, or e[x]it? ").lower().strip()
         if val == 'l':
@@ -49,6 +33,7 @@ def input_loop():
         print()
 
 
+# lists all, today's or month's tasks
 def list_tasks():
     val = input("Would you like to list [a]ll tasks, [t]oday's tasks or tasks this [m]onth? ")
     if val == 'a':
@@ -74,6 +59,7 @@ def list_tasks():
         list_tasks()
 
 
+# add task to base
 def add_task():
     name = input("Name of the task: ")
     date = input("Deadline of this task (DD-MM-YYYY): ")
@@ -95,6 +81,7 @@ def add_task():
     sqlite.add_task(t)
 
 
+# edit task (by hash)
 def edit_task():
     task_hash = input("What task would you like to edit? Describe by task hash: ")
     if len(task_hash) != 20:
@@ -112,6 +99,7 @@ def edit_task():
         edit_task()
 
 
+# delete task (by hash)
 def delete_task():
     task_hash = input("What task would you like to delete? Describe by task hash: ")
     if len(task_hash) != 20:
@@ -120,11 +108,13 @@ def delete_task():
     sqlite.delete_task(task_hash)
 
 
+# edit name of task (by hash)
 def edit_name(task_hash):
     name = input("Write new name of the task: ")
     sqlite.edit_task_name(task_hash, name)
 
 
+# edit date in selected task
 def edit_date(task_hash):
     date = input("Write new date of the task (DD-MM-YYY): ")
     if date[5] != '-' or date[2] != '-' or len(date) > 10:
@@ -143,6 +133,7 @@ def edit_date(task_hash):
     sqlite.edit_task_date(task_hash, date)
 
 
+# edit description in selected task
 def edit_description(task_hash):
     description = input("Write new description of the task: ")
     sqlite.edit_task_description(task_hash, description)
