@@ -2,3 +2,4 @@
 *.log
 venv/
 .gitignore
+__pycache__/
